@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: #e8f8f8;
+  --color-primary-100: #b3ecec;
+  --color-primary-200: #66dbdb;
+  --color-primary-300: #33cccc;
+  --color-primary-400: #1abfbf;
+  --color-primary-500: #1AAEAE;
+  --color-primary-600: #179999;
+  --color-primary-700: #138585;
+  --color-primary-800: #0f7070;
+  --color-primary-900: #0c5c5c;
+
+  --color-accent-50: #f5f5f5;
+  --color-accent-100: #e8e8e8;
+  --color-accent-200: #d1d1d1;
+  --color-accent-300: #a8a8a8;
+  --color-accent-400: #7a7a7a;
+  --color-accent-500: #4d4d4d;
+  --color-accent-600: #2e2e2e;
+  --color-accent-700: #221F1F;
+  --color-accent-800: #1a1818;
+  --color-accent-900: #121111;
+
+  --font-sans: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Custom base layer for Dark Mode support and smooth transitions */
+@layer base {
+  :root {
+    --bg-color: #F2F2F3;
+    --text-color: #221F1F;
+    --border-color: #DDE1E6;
+  }
+  
+  .dark {
+    --bg-color: #09090b; /* True deep black/slate */
+    --text-color: #f8fafc;
+    --border-color: #1e293b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em; /* Gives that tight, premium modern feel */
+  }
+
+  /* Custom Scrollbar for a premium feel */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+  }
+}
+
+/* Utility layer for custom complex visual effects */
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/50 dark:border-slate-800/50 shadow-xl;
+  }
+  
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-500 dark:from-primary-400 dark:to-accent-300;
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 25px -5px theme('colors.primary.500 / 30%');
+    transform: translateY(-2px);
+  }
+}
+
+/* Base styles for scroll animation classes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

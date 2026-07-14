@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import CtaSection from '../components/CtaSection.astro';
+import FormSection from '../components/FormSection.astro';
+import { resolvePath } from '../utils/navigation';
+
+const brandFeatures = [
+  {
+    icon: 'visibilidade',
+    title: 'Visibilidade real',
+    description: 'A sua marca percorre a cidade todos os dias, vista por milhares de pessoas. Publicidade que não se ignora.',
+  },
+  {
+    icon: 'custo',
+    title: 'Custo acessível',
+    description: 'Apenas €250/carro/mês. Sem contratos longos. Invista onde realmente importa.',
+  },
+  {
+    icon: 'segmentacao',
+    title: 'Segmentação local',
+    description: 'Alcance exato na região da Figueira da Foz. A sua marca onde o seu cliente está.',
+  },
+  {
+    icon: 'suporte',
+    title: 'Suporte dedicado',
+    description: 'Acompanhamento personalizado durante todo o piloto. Não está sozinho nesta jornada.',
+  },
+];
+---
+
+<BaseLayout 
+  title="Marcas" 
+  description="A sua marca em movimento. Anuncie nos carros do piloto SmartMooV na Figueira da Foz e leve a sua marca a milhares de pessoas."
+  image="/images/javygo-auM1c2SRzXw-unsplash.jpg"
+>
+  <Hero 
+    heading="A SUA MARCA,"
+    punchline="EM MOVIMENTO."
+    subtitle="Anuncie nos carros do piloto SmartMooV na Figueira da Foz e leve a sua marca a milhares de pessoas todos os dias."
+    heroCarUrl={resolvePath('/images/javygo-auM1c2SRzXw-unsplash.jpg')}
+  />
+  
+  <Features 
+    sectionTitle="COMO FUNCIONA"
+    features={brandFeatures}
+  />
+  
+  <CtaSection 
+    heading='Junte-se às primeiras<br />marcas <span class="text-white font-extrabold">SmartMooV</span>.'
+  />
+  
+  <FormSection 
+    formUrl="https://airtable.com/embed/appgQVo0CQGiVnWtr/pagvrE6VDQS6y4pw3/form"
+    fallbackUrl="https://airtable.com/appgQVo0CQGiVnWtr/pagvrE6VDQS6y4pw3/form"
+    sectionTitle="REGISTE O SEU INTERESSE"
+    sectionDescription="Preencha o formulário abaixo e entraremos em contacto nos próximos dias."
+  />
+</BaseLayout>

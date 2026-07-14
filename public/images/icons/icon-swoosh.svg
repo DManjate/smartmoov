@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-labelledby="swoosh-title">
+  <title id="swoosh-title">Motion swoosh</title>
+  <!-- Curved swoosh arrow — motion path from bottom-left arcing to top-right with arrowhead -->
+  <path d="M4 18C4 14 8 6 16 4" fill="none" stroke="#1AAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 4l-5-2M16 4l-3 4" fill="none" stroke="#1AAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 130" width="340" height="130" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">SmartMooV</title>
+  <style>
+    .t300 { font-family: 'Nunito Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 300; }
+  </style>
+
+  <!-- SMART - #828385, 300 weight, letter-spacing ~0.2em on 14px = ~2.8 -->
+  <text x="170" y="32" fill="#828385" class="t300" font-size="14" text-anchor="middle" letter-spacing="2.8">SMART</text>
+
+  <!-- M∞V line: M in #000000, ∞ in #1AAEAE, V in #000000 -->
+  <g font-size="28" class="t300">
+    <text x="113" y="62" fill="#000000" text-anchor="middle">M</text>
+    <text x="227" y="62" fill="#000000" text-anchor="middle">V</text>
+  </g>
+  <!-- ∞ symbol - #1AAEAE, centred at x=170 between M and V, slightly taller -->
+  <path d="M159 56 C152 56, 147 60, 147 65 C147 70, 152 73, 159 73 C162 73, 167 71, 170 68 C173 71, 178 73, 182 73 C189 73, 194 70, 194 65 C194 60, 189 56, 182 56 C178 56, 173 59, 170 62 C167 59, 162 56, 159 56Z" fill="#1AAEAE"/>
+
+  <!-- MOVING BRANDS - #828385, 300 weight, letter-spacing ~0.15em on 9px = ~1.35 -->
+  <text x="170" y="108" fill="#828385" class="t300" font-size="9" text-anchor="middle" letter-spacing="1.35">MOVING BRANDS</text>
+</svg>

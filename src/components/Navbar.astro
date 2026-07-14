@@ -1,0 +1,112 @@
+---
+import Button from './Button.astro';
+import { NAV_LINKS } from '../config';
+import { resolvePath } from '../utils/navigation';
+---
+
+<header class="sticky top-0 z-[90] w-full transition-colors duration-300 glass-panel border-x-0 border-t-0 rounded-none shadow-sm pointer-events-auto">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex-shrink-0">
+        <a href={resolvePath('/')} class="flex items-center gap-2 group">
+          <img src={resolvePath('/images/logo-smartmoov.svg')} alt="SmartMooV" class="h-10 w-auto" />
+        </a>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8">
+        {NAV_LINKS.map(link => (
+          <a href={resolvePath(link.href)} class="text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="hidden md:flex items-center gap-3">
+        <button id="theme-toggle" data-theme-toggle type="button" class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg text-sm transition-colors" aria-label="Alternar modo">
+          <svg data-theme-dark-icon class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg data-theme-light-icon class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+        <Button href="#form-section" variant="primary" size="sm" class="text-sm">QUERO SABER MAIS</Button>
+      </div>
+
+      <div class="md:hidden flex items-center gap-2">
+        <a href="#form-section" class="text-sm font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 px-2 py-1">Inscreve-te</a>
+        <button id="mobile-theme-toggle" data-theme-toggle type="button" class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none rounded-lg text-sm" aria-label="Alternar modo">
+          <svg data-theme-dark-icon class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg data-theme-light-icon class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+        
+        <button id="mobile-menu-btn" class="p-2 rounded-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
+          <span class="sr-only">Abrir menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {NAV_LINKS.map(link => (
+        <a href={resolvePath(link.href)} class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-slate-50 dark:hover:bg-slate-800">
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  function setupTheme() {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark' || storedTheme === 'light') {
+      document.documentElement.classList.toggle('dark', storedTheme === 'dark');
+    }
+
+    function updateIcons() {
+      const isDark = document.documentElement.classList.contains('dark');
+      document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+        button.setAttribute('aria-pressed', String(isDark));
+        button.querySelector('[data-theme-dark-icon]')?.classList.toggle('hidden', isDark);
+        button.querySelector('[data-theme-light-icon]')?.classList.toggle('hidden', !isDark);
+      });
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcons();
+    }
+
+    updateIcons();
+
+    document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+      if (button.dataset.themeBound === 'true') return;
+      button.dataset.themeBound = 'true';
+      button.addEventListener('click', toggleTheme);
+    });
+  }
+
+  function setupMobileMenu() {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+      const newBtn = mobileMenuBtn.cloneNode(true);
+      mobileMenuBtn.parentNode?.replaceChild(newBtn, mobileMenuBtn);
+      
+      newBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  }
+
+  setupTheme();
+  setupMobileMenu();
+  
+  document.addEventListener('astro:page-load', () => {
+    setupTheme();
+    setupMobileMenu();
+  });
+</script>

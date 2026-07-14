@@ -1,0 +1,57 @@
+---
+interface Props {
+  sectionTitle?: string;
+  features: {
+    title: string;
+    description: string;
+    icon: string;
+    stepNumber?: number;
+  }[];
+}
+
+const { sectionTitle = 'COMO FUNCIONA', features = [] } = Astro.props;
+
+const iconSvgs: Record<string, string> = {
+  'ganhos': `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>`,
+  'rotina': `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  'instalacao': `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+  'marcas': `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
+  'visibilidade': `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+  'custo': `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>`,
+  'segmentacao': `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  'suporte': `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+};
+---
+
+<section id="como-funciona" class="py-32 bg-[#F2F2F3] dark:bg-[#0c0c0f] border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-20 reveal-on-scroll">
+      <h2 class="text-sm font-heading font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400 mb-4">
+        {sectionTitle}
+      </h2>
+      <p class="text-4xl md:text-5xl font-heading font-extrabold text-slate-900 dark:text-white">
+        Simples, direto, a render.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      {features.map((feature, index) => {
+        const iconSvg = iconSvgs[feature.icon] || '';
+        return (
+        <div class={`glass-panel rounded-3xl p-8 flex flex-col hover-glow reveal-on-scroll relative overflow-hidden group ${index === 0 ? 'md:col-span-2 lg:col-span-2 lg:row-span-1' : ''}`} style={`transition-delay: ${index * 100}ms;`}>
+          <div class="absolute top-4 right-4 text-8xl font-heading font-extrabold text-primary-500/10 dark:text-primary-500/5 select-none leading-none">
+            {feature.stepNumber || index + 1}
+          </div>
+          <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900/40 text-primary-600 dark:text-primary-400 rounded-2xl flex items-center justify-center mb-6 shadow-inner relative z-10" set:html={iconSvg} />
+          <h3 class="text-xl font-heading font-bold text-slate-900 dark:text-white mb-3 relative z-10">
+            {feature.title}
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed relative z-10">
+            {feature.description}
+          </p>
+        </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

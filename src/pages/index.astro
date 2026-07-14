@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import FAQ from '../components/FAQ.astro';
+import CtaSection from '../components/CtaSection.astro';
+import FormSection from '../components/FormSection.astro';
+import { resolvePath } from '../utils/navigation';
+
+const driverFeatures = [
+  {
+    icon: 'ganhos',
+    title: 'Ganha até 250€/mês',
+    description: 'Recebes um pagamento mensal por andares com a vinil no teu carro. Conduzes como sempre, e ainda és pago por isso.',
+  },
+  {
+    icon: 'rotina',
+    title: 'Sem alterar a tua rotina',
+    description: 'Conduzes como sempre — a publicidade vai contigo para todo o lado. Zero esforço adicional.',
+  },
+  {
+    icon: 'instalacao',
+    title: 'Instalação + remoção grátis',
+    description: 'Nós colocamos e removemos a vinil sem custos para ti. Profissionais experientes, materiais de qualidade.',
+  },
+  {
+    icon: 'marcas',
+    title: 'Escolhes as marcas que queres',
+    description: 'Só aceitas campanhas de marcas com que te identificas. Tu tens o controlo total.',
+  },
+];
+
+const driverFaqs = [
+  {
+    question: 'Quanto tempo demora a aplicar a vinil? Preciso de tirar um dia de folga?',
+    answer: 'A aplicação demora 1-4 horas dependendo do tamanho da vinil (portas: ~1h, carro inteiro: ~4h). Podes deixar o carro connosco e buscar no fim do dia — não precisas de tirar o dia de folga.',
+  },
+  {
+    question: 'Posso escolher as marcas?',
+    answer: 'Sim! Na altura da inscrição, podes indicar que tipos de marcas aceitas ou não no teu carro. Só recebes campanhas de marcas com que te sintas confortável.',
+  },
+  {
+    question: 'A vinil danifica a pintura?',
+    answer: 'Não. A vinil automóvel é concebida para ser removida sem danificar a pintura original, desde que a pintura esteja em bom estado. Trabalhamos com profissionais experientes e usamos materiais de qualidade.',
+  },
+  {
+    question: 'O que acontece se tiver um acidente?',
+    answer: 'Se tiveres um acidente, comunicas-nos e tratamos da reparação ou substituição da vinil sem custos para ti. O seguro do veículo continua a funcionar normalmente — recomendamos que declares a vinil à tua seguradora.',
+  },
+];
+---
+
+<BaseLayout 
+  title="Condutores" 
+  description="Ganha dinheiro a conduzir com o SmartMooV. Projeto-piloto na Figueira da Foz. Junta-te aos primeiros condutores."
+  image="/images/javygo-auM1c2SRzXw-unsplash.jpg"
+>
+  <Hero 
+    heading="OS KILÓMETROS QUE FAZES,"
+    punchline="PODEM RENDER MAIS."
+    subtitle="Com o SmartMooV, transformas o teu carro numa fonte de rendimento extra. Conduzes como sempre, e ainda és pago por isso."
+    heroCarUrl={resolvePath('/images/javygo-auM1c2SRzXw-unsplash.jpg')}
+  />
+  
+  <Features 
+    sectionTitle="COMO FUNCIONA"
+    features={driverFeatures}
+  />
+  
+  <FAQ faqs={driverFaqs} />
+  
+  <CtaSection 
+    heading='Junta-te aos primeiros<br />condutores <span class="text-white font-extrabold">SmartMooV</span>.'
+  />
+  
+  <FormSection 
+    formUrl="https://airtable.com/embed/appgQVo0CQGiVnWtr/pag14O6qoPrxXeSi1/form"
+    fallbackUrl="https://airtable.com/appgQVo0CQGiVnWtr/pag14O6qoPrxXeSi1/form"
+  />
+</BaseLayout>
