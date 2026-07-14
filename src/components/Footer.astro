@@ -13,12 +13,14 @@ const { showBrandLink = false } = Astro.props;
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-[minmax(280px,1.35fr)_repeat(2,minmax(140px,1fr))] lg:gap-10 mb-12">
       <div>
-        <a href={resolvePath('/')} class="flex items-center gap-2 mb-4">
-          <img src={resolvePath('/images/logo-smartmoov-r.svg')} alt="SmartMooV" class="h-10 w-auto" />
-        </a>
-        <p class="text-slate-300 text-base font-bold uppercase tracking-wide mb-4">
-          Movemos marcas,<br /><span class="text-primary-400">ligamos pessoas.</span>
-        </p>
+        <div class="flex items-start gap-4 mb-4">
+          <a href={resolvePath('/')} class="flex-shrink-0">
+            <img src={resolvePath('/images/logo-smartmoov-r.svg')} alt="SmartMooV" class="h-12 w-auto" />
+          </a>
+          <p class="text-slate-300 text-base font-bold uppercase tracking-wide leading-snug">
+            Movemos marcas,<br /><span class="text-primary-400">ligamos pessoas.</span>
+          </p>
+        </div>
         <p class="text-slate-400 text-sm">
           Projeto-piloto na Figueira da Foz.
         </p>
