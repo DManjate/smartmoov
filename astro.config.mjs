@@ -5,9 +5,8 @@ import { passthroughImageService } from 'astro/config';
 
 import mdx from '@astrojs/mdx';
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://zenix.farrosfr.com',
+  site: 'https://smartmoov.pt',
   base: '/',
   trailingSlash: 'always',
 
@@ -17,7 +16,6 @@ export default defineConfig({
 
   image: {
     service: passthroughImageService(),
-    domains: ['i.pravatar.cc']
   },
 
   vite: {
