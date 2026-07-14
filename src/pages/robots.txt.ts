@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { SITE_URL } from '../config';
 
 export const GET: APIRoute = () => {
-  const sitemapURL = new URL('/sitemap.xml', SITE_URL);
+  const sitemapURL = new URL('/smartmoov/sitemap.xml', SITE_URL);
 
   return new Response(`User-agent: *
 Allow: /
