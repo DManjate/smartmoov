@@ -1,7 +1,6 @@
 ---
 import Button from './Button.astro';
 import Badge from './Badge.astro';
-import { resolvePath } from '../utils/navigation';
 
 interface Props {
   title: string;
@@ -26,42 +25,40 @@ const {
 ---
 
 <section class="relative overflow-hidden">
-  <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 max-w-7xl mx-auto lg:pl-[max(calc((100vw-80rem)/2),1rem)]">
+  <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
     
-      <div class="flex flex-col gap-6 lg:max-w-xl w-full py-8 lg:py-16 px-4 sm:px-6 lg:px-0 lg:pr-0">
-        {badge && (
-          <div>
-            <Badge variant="primary" class="px-4 py-1.5 text-sm border border-primary-200 dark:border-primary-800 backdrop-blur-md bg-white/50 dark:bg-primary-900/50 inline-flex">
-              {badge}
-            </Badge>
-          </div>
-        )}
+    <div class="flex-shrink-0 lg:w-[45%] flex flex-col gap-6 py-8 lg:py-16 lg:pl-[max(calc((100vw-80rem)/2+1rem),1.5rem)]">
+      {badge && (
+        <Badge variant="primary" class="px-4 py-1.5 text-sm border border-primary-200 dark:border-primary-800 backdrop-blur-md bg-white/50 dark:bg-primary-900/50 self-start">
+          {badge}
+        </Badge>
+      )}
 
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]" set:html={title} />
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]" set:html={title} />
 
-        <div class="text-lg xl:text-xl text-slate-600 dark:text-slate-400 flex flex-col gap-4 font-sans leading-relaxed" set:html={content} />
+      <div class="text-lg xl:text-xl text-slate-600 dark:text-slate-400 flex flex-col gap-4 font-sans leading-relaxed" set:html={content} />
 
-        <div class="pt-2">
-          <Button href={cta.href} variant="primary" size="lg" class="self-start text-lg px-8 py-4 shadow-xl shadow-primary-500/20">
-            {cta.label}
-          </Button>
+      <div class="pt-2">
+        <Button href={cta.href} variant="primary" size="lg" class="self-start text-lg px-8 py-4 shadow-xl shadow-primary-500/20">
+          {cta.label}
+        </Button>
+      </div>
+    </div>
+
+    {heroCarUrl && (
+      <div class="lg:flex-1 w-full self-stretch reveal-on-scroll" style="transition-delay: 200ms;">
+        <div class="h-full flex items-center justify-end">
+          <img src={heroCarUrl} alt={heroCarAlt} class="w-full max-w-none lg:max-h-[600px] object-contain object-right" loading="eager" />
         </div>
       </div>
+    )}
 
-      {heroCarUrl && (
-        <div class="lg:flex-1 w-full reveal-on-scroll" style="transition-delay: 200ms;">
-          <div class="h-full flex items-center">
-            <img src={heroCarUrl} alt={heroCarAlt} class="w-full h-auto max-w-none object-contain" loading="eager" />
-          </div>
+    {!heroCarUrl && (
+      <div class="lg:flex-1 w-full reveal-on-scroll" style="transition-delay: 200ms;">
+        <div class="aspect-[16/9] rounded-3xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 dark:text-slate-600"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.2c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
         </div>
-      )}
-
-      {!heroCarUrl && (
-        <div class="lg:flex-1 w-full reveal-on-scroll" style="transition-delay: 200ms;">
-          <div class="aspect-[16/9] rounded-3xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center h-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 dark:text-slate-600"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.2c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
-          </div>
-        </div>
-      )}
+      </div>
+    )}
   </div>
 </section>
