@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
+import HeroBlackspike from '../components/HeroBlackspike.astro';
 import Features from '../components/Features.astro';
 import FAQ from '../components/FAQ.astro';
 import CtaSection from '../components/CtaSection.astro';
@@ -55,11 +55,12 @@ const driverFaqs = [
   description="Ganha dinheiro a conduzir com o SmartMooV. Projeto-piloto na Figueira da Foz. Junta-te aos primeiros condutores."
   image="/images/moov-car.svg"
 >
-  <Hero 
-    heading="OS KILÓMETROS QUE FAZES,"
-    punchline="PODEM RENDER MAIS."
-    subtitle={"A <span class='text-primary-600 dark:text-primary-400 font-extrabold'>SmartMooV</span> transforma o teu tempo ao volante em rendimento.\nSem custos, sem complicações. Sem alterar a tua rotina."}
+  <HeroBlackspike 
+    title='OS KILÓMETROS QUE FAZES,<br /><span class="text-primary-600 dark:text-primary-400">PODEM RENDER MAIS.</span>'
+    content='<p>A <span class="text-primary-600 dark:text-primary-400 font-extrabold">SmartMooV</span> transforma o teu tempo ao volante em rendimento.</p><p>Sem custos, sem complicações. Sem alterar a tua rotina.</p>'
+    badge="Projeto-piloto na Figueira da Foz"
     heroCarUrl={resolvePath('/images/moov-car.svg')}
+    heroCarAlt="Carro SmartMooV com publicidade em movimento"
   />
   
   <Features 
