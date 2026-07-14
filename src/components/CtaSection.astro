@@ -12,19 +12,19 @@ const {
 } = Astro.props;
 ---
 
-<section class="py-32 bg-primary-600 dark:bg-primary-900 text-white text-center relative overflow-hidden">
+<section class="py-32 bg-primary-600 dark:bg-primary-900 text-center relative overflow-hidden">
   <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIxIiBjeT0iMSIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIj48L2NpcmNsZT4KPC9zdmc+')] opacity-40 dark:opacity-20"></div>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10 reveal-on-scroll">
-    <h2 class="text-4xl md:text-6xl font-heading font-extrabold mb-6 tracking-tight text-white" set:html={heading}>
+    <h2 class="text-4xl md:text-6xl font-heading font-extrabold mb-6 tracking-tight text-slate-900 dark:text-slate-900" set:html={heading}>
     </h2>
     
     <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 mb-12">
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
-      <span class="text-sm font-bold tracking-wide uppercase">{urgencyText}</span>
+      <span class="text-sm font-bold tracking-wide uppercase text-slate-900">{urgencyText}</span>
     </div>
     
     <div class="flex flex-col sm:flex-row justify-center gap-4">
-      <Button href="#form-section" variant="secondary" size="lg" class="w-full sm:w-auto text-lg px-8 py-4 shadow-2xl shadow-black/20">
+      <Button href="#como-funciona" variant="secondary" size="lg" class="w-full sm:w-auto text-lg px-8 py-4 shadow-2xl shadow-black/20">
         QUERO SABER MAIS →
       </Button>
     </div>
