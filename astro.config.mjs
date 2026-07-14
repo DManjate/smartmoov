@@ -6,8 +6,8 @@ import { passthroughImageService } from 'astro/config';
 import mdx from '@astrojs/mdx';
 
 export default defineConfig({
-  site: 'https://dmanjate.github.io',
-  base: '/smartmoov/',
+  site: 'https://smartmoov.pt',
+  base: '/',
   trailingSlash: 'always',
 
   build: {

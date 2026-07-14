@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = 'SmartMooV';
 export const SITE_DESCRIPTION = 'Movemos marcas, ligamos pessoas. Publicidade em movimento para o seu negócio.';
-export const SITE_URL = 'https://dmanjate.github.io';
+export const SITE_URL = 'https://smartmoov.pt';
 export const BRAND_NAME = 'SmartMooV';
 export const BRAND_LOGO_TEXT = 'SM';
 
