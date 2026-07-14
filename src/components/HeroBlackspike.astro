@@ -27,7 +27,7 @@ const {
 <section class="relative overflow-hidden">
   <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
     
-    <div class="flex-shrink-0 lg:w-[45%] flex flex-col gap-6 py-8 lg:py-16 lg:pl-[max(calc((100vw-80rem)/2+1rem),1.5rem)]">
+    <div class="flex-shrink-0 lg:w-[45%] flex flex-col gap-6 py-12 lg:py-20 pl-4 sm:pl-6 lg:pl-[max(calc((100vw-80rem)/2+2rem),2rem)] pr-4 sm:pr-6 lg:pr-0">
       {badge && (
         <Badge variant="primary" class="px-4 py-1.5 text-sm border border-primary-200 dark:border-primary-800 backdrop-blur-md bg-white/50 dark:bg-primary-900/50 self-start">
           {badge}
@@ -48,7 +48,7 @@ const {
     {heroCarUrl && (
       <div class="lg:flex-1 w-full self-stretch reveal-on-scroll" style="transition-delay: 200ms;">
         <div class="h-full flex items-center justify-end">
-          <img src={heroCarUrl} alt={heroCarAlt} class="w-full max-w-none lg:max-h-[600px] object-contain object-right" loading="eager" />
+          <img src={heroCarUrl} alt={heroCarAlt} class="w-full h-auto object-contain object-right" loading="eager" />
         </div>
       </div>
     )}
