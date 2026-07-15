@@ -20,9 +20,9 @@ export const FOOTER_LINKS = [
   {
     title: 'SmartMooV',
     links: [
-      { label: 'Como Funciona', href: '/#como-funciona' },
-      { label: 'Perguntas Frequentes', href: '/#faq' },
-      { label: 'Inscreve-te', href: '/#form-section' },
+      { label: 'Como Funciona', href: '#como-funciona' },
+      { label: 'Perguntas Frequentes', href: '#faq' },
+      { label: 'Entre em contacto', href: '#form-section' },
     ],
   },
   {
