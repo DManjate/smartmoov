@@ -76,49 +76,60 @@ const driverFaqs = [
 
 <BaseLayout 
   title="Condutores" 
-  description="Ganha dinheiro a conduzir com o SmartMooV. Projeto-piloto na Figueira da Foz. Junta-te aos primeiros condutores."
+  description="Ganha dinheiro a conduzir com o SmartMooV. Projeto-piloto na tua cidade. Junta-te aos primeiros condutores."
   image="/images/moov-car.svg"
   showBrandLink={true}
 >
   <Hero 
     title='OS KILÓMETROS QUE FAZES,<br /><span class="text-primary-600 dark:text-primary-400">PODEM RENDER MAIS.</span>'
     content='<p>A <span class="text-primary-600 dark:text-primary-400 font-extrabold">SmartMooV</span> transforma o teu tempo ao volante em rendimento.</p><p>Sem custos, sem complicações. Sem alterar a tua rotina.</p>'
-    badge="Projeto-piloto na Figueira da Foz"
+    badge="Projeto-piloto na tua cidade"
     heroCarUrl={resolvePath('/images/moov-car.svg')}
     heroCarAlt="Carro SmartMooV com publicidade em movimento"
   />
 
-  <section class="py-20 bg-[#F2F2F3]">
-    <div class="container mx-auto px-4 max-w-2xl text-center">
-      <h2 class="text-sm font-bold uppercase tracking-widest text-primary-400 mb-6">
-        O QUE É A SMARTMOOV
-      </h2>
-
-      <p class="text-lg text-slate-700 leading-relaxed mb-6">
-        A <strong class="text-primary-600">SmartMooV</strong> é uma plataforma que liga
+  <section class="py-32 bg-primary-600 dark:bg-primary-900 text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIxIiBjeT0iMSIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIj48L2NpcmNsZT4KPC9zdmc+')] opacity-40 dark:opacity-20"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+      <div class="max-w-3xl mx-auto mb-20 reveal-on-scroll">
+        <h2 class="text-sm font-heading font-bold uppercase tracking-widest text-slate-900 mb-4">
+          O QUE É A SMARTMOOV
+        </h2>
+      <p class="text-xl text-white/80 leading-relaxed mb-16 max-w-2xl mx-auto">
+        A <strong class="text-slate-900">SmartMooV</strong> é uma plataforma que liga
         condutores a marcas. As marcas pagam para ter publicidade nos carros —
         e tu recebes por conduzires o teu carro com um vinil publicitário.
       </p>
+      </div>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 text-sm text-slate-500">
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-primary-400 inline-block"></span>
-          <span>O vinil é aplicado e removido por profissionais</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div class="rounded-3xl p-8 flex flex-col hover-glow reveal-on-scroll relative overflow-hidden bg-white shadow-xl border border-white/20" style="transition-delay: 100ms;">
+          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6 text-primary-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 text-left">Profissionais certificados</h3>
+          <p class="text-slate-600 leading-relaxed text-left">O vinil é aplicado e removido por profissionais.</p>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-primary-400 inline-block"></span>
-          <span>Recebes todos os meses enquanto a campanha durar</span>
+        <div class="rounded-3xl p-8 flex flex-col hover-glow reveal-on-scroll relative overflow-hidden bg-white shadow-xl border border-white/20" style="transition-delay: 200ms;">
+          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6 text-primary-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 text-left">Pagamento mensal garantido</h3>
+          <p class="text-slate-600 leading-relaxed text-left">Recebes todos os meses enquanto a campanha durar.</p>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-primary-400 inline-block"></span>
-          <span>Tu escolhes que marcas aceitas no teu carro</span>
+        <div class="rounded-3xl p-8 flex flex-col hover-glow reveal-on-scroll relative overflow-hidden bg-white shadow-xl border border-white/20" style="transition-delay: 300ms;">
+          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6 text-primary-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 text-left">Tu escolhes as marcas</h3>
+          <p class="text-slate-600 leading-relaxed text-left">Tu escolhes que marcas aceitas no teu carro.</p>
         </div>
       </div>
 
-      <p class="text-sm text-slate-400 mt-10">
-        Projeto-piloto na Figueira da Foz. Os primeiros condutores a inscreverem-se
-        terão prioridade na seleção de campanhas.
-      </p>
+      <div class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase bg-white/20 backdrop-blur-sm border border-white/30 text-slate-900 mt-16 reveal-on-scroll">
+        Projeto-piloto na tua cidade. Os primeiros condutores a inscreverem-se terão prioridade na seleção de campanhas.
+      </div>
+
     </div>
   </section>
   
@@ -127,48 +138,13 @@ const driverFaqs = [
     features={driverFeatures}
   />
 
-  <section class="py-24 bg-[#F2F2F3] text-center">
-    <div class="container mx-auto px-4">
-      <p class="text-4xl md:text-5xl font-heading font-extrabold text-slate-900 mb-3">
-        Pagamento mensal garantido.
-      </p>
-      <p class="text-xl text-slate-600">
-        Sem surpresas. Sem complicações.
-      </p>
-    </div>
-  </section>
-  
   <FAQ faqs={driverFaqs} />
   
   <CtaSection 
     heading='Junta-te aos primeiros<br />condutores <span class="text-white font-extrabold">SmartMooV</span>.'
   />
 
-  <section class="py-16 bg-[#F2F2F3]">
-    <div class="container mx-auto px-4 max-w-2xl">
-      <div class="glass-panel rounded-3xl p-8 reveal-on-scroll">
-        <h2 class="text-lg font-heading font-bold text-slate-900 mb-6 text-center">
-          Confiança SmartMooV
-        </h2>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3">
-            <span class="text-primary-400 font-bold flex-shrink-0 mt-0.5">✓</span>
-            <span class="text-slate-700">Vinil automóvel profissional — não danifica a pintura</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-primary-400 font-bold flex-shrink-0 mt-0.5">✓</span>
-            <span class="text-slate-700">Remoção gratuita no fim da campanha</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-primary-400 font-bold flex-shrink-0 mt-0.5">✓</span>
-            <span class="text-slate-700">Dados protegidos — nunca partilhados sem autorização</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  
-  <FormSection 
+  <FormSection
     formUrl="https://airtable.com/embed/appgQVo0CQGiVnWtr/pag14O6qoPrxXeSi1/form"
     fallbackUrl="https://airtable.com/appgQVo0CQGiVnWtr/pag14O6qoPrxXeSi1/form"
   />
