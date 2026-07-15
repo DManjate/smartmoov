@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/HeroBlackspike.astro';
 import Features from '../components/Features.astro';
+import FAQ from '../components/FAQ.astro';
 import CtaSection from '../components/CtaSection.astro';
 import FormSection from '../components/FormSection.astro';
 import { resolvePath } from '../utils/navigation';
@@ -10,12 +11,12 @@ const brandFeatures = [
   {
     icon: 'visibilidade',
     title: 'Visibilidade real',
-    description: 'A sua marca percorre a cidade todos os dias, vista por milhares de pessoas. Publicidade que não se ignora.',
+    description: 'A sua marca percorre a cidade todos os dias, vista por milhares de pessoas. Publicidade que não passa despercebida.',
   },
   {
     icon: 'custo',
     title: 'Custo acessível',
-    description: 'Apenas €250/carro/mês. Sem contratos longos. Invista onde realmente importa.',
+    description: 'Apenas €250/carro/mês — até 7× mais barato por impressão do que um outdoor. Sem contratos longos.',
   },
   {
     icon: 'segmentacao',
@@ -28,12 +29,48 @@ const brandFeatures = [
     description: 'Acompanhamento personalizado durante todo o piloto. Não está sozinho nesta jornada.',
   },
 ];
+
+const brandFaqs = [
+  {
+    question: 'Quanto custa e o que está incluído?',
+    answer: 'O piloto SmartMooV custa €250 por carro por mês. Este valor inclui a produção do vinil publicitário, a instalação profissional, a remoção no final da campanha e o acompanhamento dedicado durante todo o período. É um preço de lançamento exclusivo para as primeiras marcas do piloto.',
+  },
+  {
+    question: 'Como sei que a minha marca está a ser vista?',
+    answer: 'Cada carro no piloto circula diariamente pela Figueira da Foz — zonas de maior tráfego, centro da cidade, praias, áreas comerciais. Estimamos que cada veículo gere dezenas de milhares de visualizações por mês, com base em dados de densidade de tráfego do INE. Partilhamos a metodologia consigo antes de começar.',
+  },
+  {
+    question: 'E se o condutor tiver um acidente ou conduzir mal?',
+    answer: 'Todos os condutores SmartMooV seguem um código de conduta. A sua marca está protegida: se houver algum incidente, temos o direito de remover o anúncio imediatamente. E se houver danos no vinil por acidente, tratamos da substituição sem custos adicionais.',
+  },
+  {
+    question: 'Qual é o compromisso? Tenho de assinar um contrato longo?',
+    answer: 'Nenhum. O piloto é de 1 mês, sem período de fidelização. Se quiser renovar no fim do mês, falamos. Se não, removemos o vinil e terminamos a colaboração — sem custos, sem burocracias.',
+  },
+  {
+    question: 'Isto já foi feito antes? Têm resultados?',
+    answer: 'O modelo de publicidade em veículos já está provado internacionalmente. Empresas como a Wrapify e a Carvertise operam nos EUA há anos com centenas de campanhas. A SmartMooV é a primeira plataforma deste tipo em Portugal — estamos a trazê-lo para a Figueira da Foz. Pode ser o primeiro anunciante local.',
+  },
+  {
+    question: 'Quem vai ver o meu anúncio?',
+    answer: 'Toda a gente que circula pela Figueira da Foz — moradores, turistas, quem vai à praia no Verão, quem faz compras no centro. Se os seus clientes estão na Figueira, eles vão ver a sua marca. Pode escolher um público-alvo específico e adaptamos as rotas ao seu perfil.',
+  },
+  {
+    question: 'Posso escolher onde os carros andam?',
+    answer: 'Sim. Para o piloto, podemos dar prioridade a rotas específicas — centro da cidade, zona da praia, áreas comerciais. Discutimos a segmentação geográfica consigo antes da campanha começar, para garantir que a sua marca aparece nos sítios certos.',
+  },
+  {
+    question: 'Porque é que isto é melhor do que um outdoor?',
+    answer: 'Um outdoor está parado à espera que alguém passe — e só é visto por quem vai naquela direção. Um carro SmartMooV vai ter com as pessoas: passa pelo centro, pelas praias, pelos bairros. E custa menos por impressão. Para um negócio local, a diferença é clara: com o mesmo orçamento, chega a mais pessoas nos sítios que interessam.',
+  },
+];
 ---
 
 <BaseLayout 
   title="Marcas" 
   description="A sua marca em movimento. Anuncie nos carros do piloto SmartMooV na Figueira da Foz e leve a sua marca a milhares de pessoas."
-  image="/images/javygo-auM1c2SRzXw-unsplash.jpg"
+  image="/images/moov-car.svg"
+  showDriverLink={true}
 >
   <Hero 
     title='A SUA MARCA,<br /><span class="text-primary-600 dark:text-primary-400">EM MOVIMENTO.</span>'
@@ -42,11 +79,63 @@ const brandFeatures = [
     heroCarUrl={resolvePath('/images/moov-car.svg')}
     heroCarAlt="Carro SmartMooV com publicidade em movimento"
   />
+
+  <section class="py-20 bg-[#F2F2F3]">
+    <div class="container mx-auto px-4 max-w-2xl text-center">
+      <h2 class="text-sm font-bold uppercase tracking-widest text-primary-400 mb-6">
+        O QUE É A SMARTMOOV
+      </h2>
+
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">
+        A <strong class="text-primary-600">SmartMooV</strong> é uma plataforma que liga
+        marcas a condutores. A sua marca aparece em carros que circulam pela cidade
+        todos os dias — uma nova forma de publicidade exterior que chega onde os
+        outdoors não chegam.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 text-sm text-slate-500">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-primary-400 inline-block"></span>
+          <span>Cada carro é visto por milhares de pessoas por dia</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-primary-400 inline-block"></span>
+          <span>Até 7× mais barato por impressão do que um outdoor</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-primary-400 inline-block"></span>
+          <span>Nós tratamos de tudo — produção, instalação, remoção</span>
+        </div>
+      </div>
+
+      <p class="text-sm text-slate-400 mt-10">
+        Piloto exclusivo na Figueira da Foz. As primeiras marcas a inscreverem-se
+        terão prioridade na seleção de rotas.
+      </p>
+    </div>
+  </section>
   
   <Features 
     sectionTitle="COMO FUNCIONA"
     features={brandFeatures}
   />
+
+  <section class="py-24 bg-[#F2F2F3] text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-sm font-bold uppercase tracking-widest text-primary-400 mb-6">
+        INVESTIMENTO
+      </h2>
+
+      <p class="text-4xl md:text-5xl font-heading font-extrabold text-primary-400 leading-tight">
+        €250/CARRO/MÊS
+      </p>
+      <p class="text-xl text-slate-600 mt-3">
+        Piloto: 10 carros na Figueira. 1 mês de teste. Sem fidelização.
+      </p>
+    </div>
+  </section>
+
+  <FAQ faqs={brandFaqs} />
   
   <CtaSection 
     heading='Junte-se às primeiras<br />marcas <span class="text-white font-extrabold">SmartMooV</span>.'
