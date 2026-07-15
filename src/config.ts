@@ -12,8 +12,8 @@ export const SOCIAL_LINKS = {
 };
 
 export const NAV_LINKS = [
-  { href: '/#como-funciona', label: 'Como Funciona' },
-  { href: '/#faq', label: 'Perguntas Frequentes' },
+  { href: '#como-funciona', label: 'Como Funciona' },
+  { href: '#faq', label: 'Perguntas Frequentes' },
 ];
 
 export const FOOTER_LINKS = [
