@@ -11,7 +11,7 @@ const driverFeatures = [
   {
     icon: 'ganhos',
     title: 'Ganha a partir de <span class="text-primary-400 font-extrabold">50€/mês</span>*',
-    description: 'Recebes um pagamento mensal por andares com a vinil no teu carro. Conduzes como sempre, e ainda és pago por isso.',
+    description: 'Recebes um pagamento mensal por andares com o vinil no teu carro. Conduzes como sempre, e ainda és pago por isso.',
   },
   {
     icon: 'rotina',
@@ -21,7 +21,7 @@ const driverFeatures = [
   {
     icon: 'instalacao',
     title: 'Instalação + remoção grátis',
-    description: 'Nós colocamos e removemos a vinil sem custos para ti. Profissionais experientes, materiais de qualidade.',
+    description: 'Nós colocamos e removemos o vinil sem custos para ti. Profissionais experientes, materiais de qualidade.',
   },
   {
     icon: 'marcas',
@@ -32,20 +32,44 @@ const driverFeatures = [
 
 const driverFaqs = [
   {
-    question: 'Quanto tempo demora a aplicar a vinil? Preciso de tirar um dia de folga?',
-    answer: 'A aplicação demora 1-4 horas dependendo do tamanho da vinil (portas: ~1h, carro inteiro: ~4h). Podes deixar o carro connosco e buscar no fim do dia — não precisas de tirar o dia de folga.',
+    question: 'Quanto tempo demora a aplicar o vinil? Preciso de tirar um dia de folga?',
+    answer: 'A aplicação demora 1-4 horas dependendo do tamanho do vinil (portas: ~1h, carro inteiro: ~4h). Podes deixar o carro connosco e buscar no fim do dia — não precisas de tirar o dia de folga.',
   },
   {
     question: 'Posso escolher as marcas?',
     answer: 'Sim! Na altura da inscrição, podes indicar que tipos de marcas aceitas ou não no teu carro. Só recebes campanhas de marcas com que te sintas confortável.',
   },
   {
-    question: 'A vinil danifica a pintura?',
-    answer: 'Não. A vinil automóvel é concebida para ser removida sem danificar a pintura original, desde que a pintura esteja em bom estado. Trabalhamos com profissionais experientes e usamos materiais de qualidade.',
+    question: 'O vinil danifica a pintura?',
+    answer: 'Não. O vinil automóvel é concebido para ser removido sem danificar a pintura original, desde que a pintura esteja em bom estado. Trabalhamos com profissionais experientes e usamos materiais de qualidade.',
   },
   {
     question: 'O que acontece se tiver um acidente?',
-    answer: 'Se tiveres um acidente, comunicas-nos e tratamos da reparação ou substituição da vinil sem custos para ti. O seguro do veículo continua a funcionar normalmente — recomendamos que declares a vinil à tua seguradora.',
+    answer: 'Se tiveres um acidente, comunicas-nos e tratamos da reparação ou substituição do vinil sem custos para ti. O seguro do veículo continua a funcionar normalmente — recomendamos que declares o vinil à tua seguradora.',
+  },
+  {
+    question: 'Como e quando recebo o pagamento?',
+    answer: 'O pagamento é feito mensalmente por transferência bancária. Após o primeiro mês de campanha, recebes o valor acordado até ao dia 5 do mês seguinte. O valor é fixo por mês — não depende de quantos quilómetros fazes (embora queremos condutores que circulem regularmente).',
+  },
+  {
+    question: 'O vinil afeta o meu seguro?',
+    answer: 'O vinil é considerado uma modificação estética e, na maioria dos casos, não afeta o teu seguro. Recomendamos que informes a tua seguradora quando o vinil for aplicado — a maioria das seguradoras não altera as condições por um wrap publicitário. A SmartMooV cobre qualquer dano no vinil em caso de acidente.',
+  },
+  {
+    question: 'Quanto tempo dura cada campanha?',
+    answer: 'As campanhas duram tipicamente 1 a 3 meses. Não existe um período mínimo de permanência — se quiseres remover o vinil antes do fim, podes fazê-lo sem penalização. Avisando com 15 dias de antecedência, tratamos da remoção gratuita.',
+  },
+  {
+    question: 'Quando começo a ganhar? Já tenho uma campanha garantida?',
+    answer: 'A SmartMooV está neste momento a iniciar o projeto-piloto na Figueira da Foz. Isto significa que estamos a construir a rede de condutores e a angariar as primeiras marcas. Ao inscreveres-te, ficas na nossa lista de condutores pré-registados — quando tivermos uma campanha disponível para o teu perfil, entramos em contacto contigo. Quanto mais cedo te inscreveres, mais cedo poderás ser selecionado.',
+  },
+  {
+    question: 'Tenho de assinar um contrato? E se quiser desistir?',
+    answer: 'Antes de cada campanha, assinas um acordo simples de participação que define o valor do pagamento, a duração da campanha e as responsabilidades de cada parte. Podes cancelar a tua participação a qualquer momento — não há contratos de longa duração nem períodos de fidelização.',
+  },
+  {
+    question: 'O meu carro é elegível? Não tenho um Smart.',
+    answer: 'Qualquer carro de passageiros em bom estado pode participar — carro, SUV, carrinha, até mota. Não é preciso ser um Smart! O nome "SmartMooV" vem de "publicidade inteligente em movimento", não da marca de carros. O que importa é que circules regularmente e que a pintura esteja em bom estado para receber o vinil.',
   },
 ];
 ---
@@ -54,6 +78,7 @@ const driverFaqs = [
   title="Condutores" 
   description="Ganha dinheiro a conduzir com o SmartMooV. Projeto-piloto na Figueira da Foz. Junta-te aos primeiros condutores."
   image="/images/moov-car.svg"
+  showBrandLink={true}
 >
   <Hero 
     title='OS KILÓMETROS QUE FAZES,<br /><span class="text-primary-600 dark:text-primary-400">PODEM RENDER MAIS.</span>'
@@ -62,17 +87,86 @@ const driverFaqs = [
     heroCarUrl={resolvePath('/images/moov-car.svg')}
     heroCarAlt="Carro SmartMooV com publicidade em movimento"
   />
+
+  <section class="py-20 bg-[#F2F2F3]">
+    <div class="container mx-auto px-4 max-w-2xl text-center">
+      <h2 class="text-sm font-bold uppercase tracking-widest text-primary-400 mb-6">
+        O QUE É A SMARTMOOV
+      </h2>
+
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">
+        A <strong class="text-primary-600">SmartMooV</strong> é uma plataforma que liga
+        condutores a marcas. As marcas pagam para ter publicidade nos carros —
+        e tu recebes por conduzires o teu carro com um vinil publicitário.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 text-sm text-slate-500">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-primary-400 inline-block"></span>
+          <span>O vinil é aplicado e removido por profissionais</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-primary-400 inline-block"></span>
+          <span>Recebes todos os meses enquanto a campanha durar</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-primary-400 inline-block"></span>
+          <span>Tu escolhes que marcas aceitas no teu carro</span>
+        </div>
+      </div>
+
+      <p class="text-sm text-slate-400 mt-10">
+        Projeto-piloto na Figueira da Foz. Os primeiros condutores a inscreverem-se
+        terão prioridade na seleção de campanhas.
+      </p>
+    </div>
+  </section>
   
   <Features 
     sectionTitle="COMO FUNCIONA"
     features={driverFeatures}
   />
+
+  <section class="py-24 bg-[#F2F2F3] text-center">
+    <div class="container mx-auto px-4">
+      <p class="text-4xl md:text-5xl font-heading font-extrabold text-slate-900 mb-3">
+        Pagamento mensal garantido.
+      </p>
+      <p class="text-xl text-slate-600">
+        Sem surpresas. Sem complicações.
+      </p>
+    </div>
+  </section>
   
   <FAQ faqs={driverFaqs} />
   
   <CtaSection 
     heading='Junta-te aos primeiros<br />condutores <span class="text-white font-extrabold">SmartMooV</span>.'
   />
+
+  <section class="py-16 bg-[#F2F2F3]">
+    <div class="container mx-auto px-4 max-w-2xl">
+      <div class="glass-panel rounded-3xl p-8 reveal-on-scroll">
+        <h2 class="text-lg font-heading font-bold text-slate-900 mb-6 text-center">
+          Confiança SmartMooV
+        </h2>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="text-primary-400 font-bold flex-shrink-0 mt-0.5">✓</span>
+            <span class="text-slate-700">Vinil automóvel profissional — não danifica a pintura</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary-400 font-bold flex-shrink-0 mt-0.5">✓</span>
+            <span class="text-slate-700">Remoção gratuita no fim da campanha</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary-400 font-bold flex-shrink-0 mt-0.5">✓</span>
+            <span class="text-slate-700">Dados protegidos — nunca partilhados sem autorização</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
   
   <FormSection 
     formUrl="https://airtable.com/embed/appgQVo0CQGiVnWtr/pag14O6qoPrxXeSi1/form"
