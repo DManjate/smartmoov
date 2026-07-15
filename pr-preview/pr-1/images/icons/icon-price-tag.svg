@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-labelledby="price-tag-title">
+  <title id="price-tag-title">Price tag with discount</title>
+  <path d="M4 4h7l9 9-7 7-9-9V4z" fill="none" stroke="#1AAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="7" y1="7" x2="8" y2="7" fill="none" stroke="#1AAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- % glyph as stroked path (fill="none"), centred inside tag -->
+  <path d="M13.5 11.5C14.33 11.5 15 12.17 15 13C15 13.83 14.33 14.5 13.5 14.5C12.67 14.5 12 13.83 12 13C12 12.17 12.67 11.5 13.5 11.5Z" fill="none" stroke="#1AAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16.5 9.5C17.33 9.5 18 10.17 18 11C18 11.83 17.33 12.5 16.5 12.5C15.67 12.5 15 11.83 15 11C15 10.17 15.67 9.5 16.5 9.5Z" fill="none" stroke="#1AAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="12" y1="14.5" x2="17" y2="10" fill="none" stroke="#1AAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
