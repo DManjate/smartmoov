@@ -4,11 +4,13 @@ import Button from './Button.astro';
 interface Props {
   heading: string;
   urgencyText?: string;
+  buttonLabel?: string;
 }
 
 const {
   heading,
   urgencyText = 'VAGAS LIMITADAS',
+  buttonLabel = 'Inscreve-te',
 } = Astro.props;
 ---
 
@@ -25,7 +27,7 @@ const {
     
     <div class="flex flex-col sm:flex-row justify-center gap-4">
       <Button href="#form-section" variant="secondary" size="lg" class="w-full sm:w-auto text-lg px-8 py-4 shadow-2xl shadow-black/20">
-        Inscreve-te
+        {buttonLabel}
       </Button>
     </div>
   </div>

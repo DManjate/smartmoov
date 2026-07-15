@@ -16,6 +16,7 @@ interface Props {
   modifiedDate?: Date;
   author?: string;
   showBrandLink?: boolean;
+  showDriverLink?: boolean;
 }
 
 const {
@@ -27,6 +28,7 @@ const {
   modifiedDate,
   author,
   showBrandLink = false,
+  showDriverLink = false,
 } = Astro.props;
 
 const siteURL = SITE_URL.endsWith('/') ? SITE_URL : `${SITE_URL}/`;
@@ -115,7 +117,7 @@ const structuredData =
     <main class="flex-grow">
       <slot />
     </main>
-    <Footer showBrandLink={showBrandLink} />
+    <Footer showBrandLink={showBrandLink} showDriverLink={showDriverLink} />
 
     <!-- Global Intersection Observer for Scroll Animations -->
     <script>

@@ -12,17 +12,17 @@ export const SOCIAL_LINKS = {
 };
 
 export const NAV_LINKS = [
-  { href: '/#como-funciona', label: 'Como Funciona' },
-  { href: '/#faq', label: 'Perguntas Frequentes' },
+  { href: '#como-funciona', label: 'Como Funciona' },
+  { href: '#faq', label: 'Perguntas Frequentes' },
 ];
 
 export const FOOTER_LINKS = [
   {
     title: 'SmartMooV',
     links: [
-      { label: 'Como Funciona', href: '/#como-funciona' },
-      { label: 'Perguntas Frequentes', href: '/#faq' },
-      { label: 'Inscreve-te', href: '/#form-section' },
+      { label: 'Como Funciona', href: '#como-funciona' },
+      { label: 'Perguntas Frequentes', href: '#faq' },
+      { label: 'Entre em contacto', href: '#form-section' },
     ],
   },
   {

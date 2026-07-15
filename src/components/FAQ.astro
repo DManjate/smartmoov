@@ -4,9 +4,10 @@ interface Props {
     question: string;
     answer: string;
   }[];
+  subtitle?: string;
 }
 
-const { faqs = [] } = Astro.props;
+const { faqs = [], subtitle = 'Tudo o que precisas de saber.' } = Astro.props;
 ---
 
 {faqs.length > 0 && (
@@ -17,7 +18,7 @@ const { faqs = [] } = Astro.props;
           Perguntas Frequentes
         </h2>
         <p class="text-4xl md:text-5xl font-heading font-extrabold text-slate-900 dark:text-white">
-          Tudo o que precisas de saber.
+          {subtitle}
         </p>
       </div>
 

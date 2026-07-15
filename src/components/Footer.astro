@@ -4,9 +4,10 @@ import { resolvePath } from '../utils/navigation';
 
 interface Props {
   showBrandLink?: boolean;
+  showDriverLink?: boolean;
 }
 
-const { showBrandLink = false } = Astro.props;
+const { showBrandLink = false, showDriverLink = false } = Astro.props;
 ---
 
 <footer class="bg-[#000000] dark:bg-[#09090b] pt-16 pb-8 transition-colors">
@@ -46,6 +47,14 @@ const { showBrandLink = false } = Astro.props;
       <p class="text-sm text-slate-500">
         &copy; {new Date().getFullYear()} {BRAND_NAME}.
       </p>
+
+      {showDriverLink && (
+        <p class="text-base">
+          <a href={resolvePath('/')} class="text-primary-400 hover:text-primary-300 transition-colors font-medium">
+            Também é condutor? Conhece o SmartMooV para condutores →
+          </a>
+        </p>
+      )}
 
       {showBrandLink && (
         <p class="text-base">
