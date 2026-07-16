@@ -12,6 +12,7 @@ interface Props {
   };
   heroCarUrl?: string;
   heroCarAlt?: string;
+  imageOffset?: string;
 }
 
 const { 
@@ -21,13 +22,14 @@ const {
   cta = { label: 'QUERO SABER MAIS →', href: '#como-funciona' },
   heroCarUrl,
   heroCarAlt = 'SmartMooV',
+  imageOffset = '-mt-28 mb-6',
 } = Astro.props;
 ---
 
-<section class="relative overflow-hidden">
+<section class="relative overflow-hidden pb-8 lg:pb-0">
   <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
     
-    <div class="flex-shrink-0 lg:w-[52%] flex flex-col gap-6 py-12 lg:py-20 pl-4 sm:pl-6 lg:pl-[max(calc((100vw-80rem)/2+2rem),2rem)] pr-4 sm:pr-6 lg:pr-0">
+    <div class="flex-shrink-0 lg:w-[52%] flex flex-col gap-6 py-12 lg:py-20 pl-4 sm:pl-6 lg:pl-[max(calc((100vw-80rem)/2+2rem),2rem)] pr-4 sm:pr-6 lg:pr-0 relative z-10">
       {badge && (
         <Badge variant="primary" class="px-4 py-1.5 text-sm border border-primary-200 dark:border-primary-800 backdrop-blur-md bg-white/50 dark:bg-primary-900/50 self-start">
           {badge}
@@ -46,7 +48,7 @@ const {
     </div>
 
     {heroCarUrl && (
-      <div class="lg:flex-1 w-full self-stretch reveal-on-scroll" style="transition-delay: 200ms;">
+      <div class={`lg:flex-1 w-full ${imageOffset} lg:mt-0 lg:mb-0 self-stretch reveal-on-scroll relative lg:static z-0`} style="transition-delay: 200ms;">
         <div class="h-full flex items-center justify-end">
           <img src={heroCarUrl} alt={heroCarAlt} class="w-full h-auto object-contain object-right" loading="eager" />
         </div>
