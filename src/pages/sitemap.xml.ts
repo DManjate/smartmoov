@@ -7,7 +7,7 @@ type SitemapEntry = {
 
 const entries: SitemapEntry[] = [
   { path: '/' },
-  { path: '/brands/' },
+  { path: '/drivers/' },
 ];
 
 const escapeXml = (value: string) =>

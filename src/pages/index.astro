@@ -7,85 +7,78 @@ import CtaSection from '../components/CtaSection.astro';
 import FormSection from '../components/FormSection.astro';
 import { resolvePath } from '../utils/navigation';
 
-const driverFeatures = [
+const brandFeatures = [
   {
-    icon: 'ganhos',
-    title: 'Ganha a partir de <span class="text-primary-400 font-extrabold">50€/mês</span>*',
-    description: 'Recebes um pagamento mensal por andares com o vinil no teu carro. Conduzes como sempre, e ainda és pago por isso.',
+    icon: 'visibilidade',
+    title: 'Visibilidade real',
+    description: 'A sua marca percorre a cidade todos os dias, vista por milhares de pessoas. Publicidade que não passa despercebida.',
   },
   {
-    icon: 'rotina',
-    title: 'Sem alterar a tua rotina',
-    description: 'Conduzes como sempre — a publicidade vai contigo para todo o lado. Zero esforço adicional.',
+    icon: 'custo',
+    title: 'Custo acessível',
+    description: 'Apenas €250/carro/mês — até 7× mais barato por impressão do que um outdoor. Sem contratos longos.',
   },
   {
-    icon: 'instalacao',
-    title: 'Instalação + remoção grátis',
-    description: 'Nós colocamos e removemos o vinil sem custos para ti. Profissionais experientes, materiais de qualidade.',
+    icon: 'segmentacao',
+    title: 'Segmentação local',
+    description: 'Alcance exato na região da Figueira da Foz. A sua marca onde o seu cliente está.',
   },
   {
-    icon: 'marcas',
-    title: 'Escolhes as marcas que queres',
-    description: 'Só aceitas campanhas de marcas com que te identificas. Tu tens o controlo total.',
+    icon: 'suporte',
+    title: 'Suporte dedicado',
+    description: 'Acompanhamento personalizado durante todo o piloto. Não está sozinho nesta jornada.',
   },
 ];
 
-const driverFaqs = [
+const brandFaqs = [
   {
-    question: 'Quanto tempo demora a aplicar o vinil? Preciso de tirar um dia de folga?',
-    answer: 'A aplicação demora 1-4 horas dependendo do tamanho do vinil (portas: ~1h, carro inteiro: ~4h). Podes deixar o carro connosco e buscar no fim do dia — não precisas de tirar o dia de folga.',
+    question: 'Quanto custa e o que está incluído?',
+    answer: 'O piloto SmartMooV custa €250 por carro por mês. Este valor inclui a produção do vinil publicitário, a instalação profissional, a remoção no final da campanha e o acompanhamento dedicado durante todo o período. É um preço de lançamento exclusivo para as primeiras marcas do piloto.',
   },
   {
-    question: 'Posso escolher as marcas?',
-    answer: 'Sim! Na altura da inscrição, podes indicar que tipos de marcas aceitas ou não no teu carro. Só recebes campanhas de marcas com que te sintas confortável.',
+    question: 'Como sei que a minha marca está a ser vista?',
+    answer: 'Cada carro no piloto circula diariamente pela Figueira da Foz — zonas de maior tráfego, centro da cidade, praias, áreas comerciais. Estimamos que cada veículo gere dezenas de milhares de visualizações por mês, com base em dados de densidade de tráfego do INE. Partilhamos a metodologia consigo antes de começar.',
   },
   {
-    question: 'O vinil danifica a pintura?',
-    answer: 'Não. O vinil automóvel é concebido para ser removido sem danificar a pintura original, desde que a pintura esteja em bom estado. Trabalhamos com profissionais experientes e usamos materiais de qualidade.',
+    question: 'E se o condutor tiver um acidente ou conduzir mal?',
+    answer: 'Todos os condutores SmartMooV seguem um código de conduta. A sua marca está protegida: se houver algum incidente, temos o direito de remover o anúncio imediatamente. E se houver danos no vinil por acidente, tratamos da substituição sem custos adicionais.',
   },
   {
-    question: 'O que acontece se tiver um acidente?',
-    answer: 'Se tiveres um acidente, comunicas-nos e tratamos da reparação ou substituição do vinil sem custos para ti. O seguro do veículo continua a funcionar normalmente — recomendamos que declares o vinil à tua seguradora.',
+    question: 'Qual é o compromisso? Tenho de assinar um contrato longo?',
+    answer: 'Nenhum. O piloto é de 1 mês, sem período de fidelização. Se quiser renovar no fim do mês, falamos. Se não, removemos o vinil e terminamos a colaboração — sem custos, sem burocracias.',
   },
   {
-    question: 'Como e quando recebo o pagamento?',
-    answer: 'O pagamento é feito mensalmente por transferência bancária. Após o primeiro mês de campanha, recebes o valor acordado até ao dia 5 do mês seguinte. O valor é fixo por mês — não depende de quantos quilómetros fazes (embora queremos condutores que circulem regularmente).',
+    question: 'Isto já foi feito antes? Têm resultados?',
+    answer: 'O modelo de publicidade em veículos já está provado internacionalmente. Empresas como a Wrapify e a Carvertise operam nos EUA há anos com centenas de campanhas. A SmartMooV é a primeira plataforma deste tipo em Portugal — estamos a trazê-lo para a Figueira da Foz. Pode ser o primeiro anunciante local.',
   },
   {
-    question: 'O vinil afeta o meu seguro?',
-    answer: 'O vinil é considerado uma modificação estética e, na maioria dos casos, não afeta o teu seguro. Recomendamos que informes a tua seguradora quando o vinil for aplicado — a maioria das seguradoras não altera as condições por um wrap publicitário. A SmartMooV cobre qualquer dano no vinil em caso de acidente.',
+    question: 'Quem vai ver o meu anúncio?',
+    answer: 'Toda a gente que circula pela Figueira da Foz — moradores, turistas, quem vai à praia no Verão, quem faz compras no centro. Se os seus clientes estão na Figueira, eles vão ver a sua marca. Pode escolher um público-alvo específico e adaptamos as rotas ao seu perfil.',
   },
   {
-    question: 'Quanto tempo dura cada campanha?',
-    answer: 'As campanhas duram tipicamente 1 a 3 meses. Não existe um período mínimo de permanência — se quiseres remover o vinil antes do fim, podes fazê-lo sem penalização. Avisando com 15 dias de antecedência, tratamos da remoção gratuita.',
+    question: 'Posso escolher onde os carros andam?',
+    answer: 'Sim. Para o piloto, podemos dar prioridade a rotas específicas — centro da cidade, zona da praia, áreas comerciais. Discutimos a segmentação geográfica consigo antes da campanha começar, para garantir que a sua marca aparece nos sítios certos.',
   },
   {
-    question: 'Quando começo a ganhar? Já tenho uma campanha garantida?',
-    answer: 'A SmartMooV está neste momento a iniciar o projeto-piloto na Figueira da Foz. Isto significa que estamos a construir a rede de condutores e a angariar as primeiras marcas. Ao inscreveres-te, ficas na nossa lista de condutores pré-registados — quando tivermos uma campanha disponível para o teu perfil, entramos em contacto contigo. Quanto mais cedo te inscreveres, mais cedo poderás ser selecionado.',
-  },
-  {
-    question: 'Tenho de assinar um contrato? E se quiser desistir?',
-    answer: 'Antes de cada campanha, assinas um acordo simples de participação que define o valor do pagamento, a duração da campanha e as responsabilidades de cada parte. Podes cancelar a tua participação a qualquer momento — não há contratos de longa duração nem períodos de fidelização.',
-  },
-  {
-    question: 'O meu carro é elegível? Não tenho um Smart.',
-    answer: 'Qualquer carro de passageiros em bom estado pode participar — carro, SUV, carrinha, até mota. Não é preciso ser um Smart! O nome "SmartMooV" vem de "publicidade inteligente em movimento", não da marca de carros. O que importa é que circules regularmente e que a pintura esteja em bom estado para receber o vinil.',
+    question: 'Porque é que isto é melhor do que um outdoor?',
+    answer: 'Um outdoor está parado à espera que alguém passe — e só é visto por quem vai naquela direção. Um carro SmartMooV vai ter com as pessoas: passa pelo centro, pelas praias, pelos bairros. E custa menos por impressão. Para um negócio local, a diferença é clara: com o mesmo orçamento, chega a mais pessoas nos sítios que interessam.',
   },
 ];
 ---
 
 <BaseLayout 
-  title="Condutores" 
-  description="Ganha dinheiro a conduzir com o SmartMooV. Projeto-piloto na tua cidade. Junta-te aos primeiros condutores."
+  title="SmartMooV" 
+  description="Movemos marcas, ligamos pessoas. Publicidade em movimento para o seu negócio."
   image="/images/moov-car.svg"
-  showBrandLink={true}
+  showDriverLink={true}
 >
   <Hero 
-    title='OS KILÓMETROS QUE FAZES,<br /><span class="text-primary-600 dark:text-primary-400">PODEM RENDER MAIS.</span>'
-    content='<p>A <span class="text-primary-600 dark:text-primary-400 font-extrabold">SmartMooV</span> transforma o teu tempo ao volante em rendimento.</p><p>Sem custos, sem complicações. Sem alterar a tua rotina.</p>'
-    badge="Projeto-piloto na tua cidade"
-    heroCarUrl={resolvePath('/images/Hero_IMG_SmartMoov.png')}
-    heroCarAlt="Carro SmartMooV com publicidade em movimento"
+    title='A SUA MARCA,<br /><span class="text-primary-600 dark:text-primary-400">EM MOVIMENTO.</span>'
+    content='<p>Anuncie nos carros do piloto <span class="text-primary-600 dark:text-primary-400 font-extrabold">SmartMooV</span> na Figueira da Foz e leve a sua marca a milhares de pessoas todos os dias.</p>'
+    badge="Projeto-piloto na Figueira da Foz"
+    heroCarUrl={resolvePath('/images/Hero_IMG2_SmartMoov.png')}
+    heroCarAlt="SmartMooV publicidade em movimento"
+    imageOffset="-mt-24 mb-5"
   />
 
   <section class="py-32 bg-primary-600 dark:bg-primary-900 text-center relative overflow-hidden">
@@ -95,57 +88,60 @@ const driverFaqs = [
         <h2 class="text-sm font-heading font-bold uppercase tracking-widest text-slate-900 mb-4">
           O QUE É A SMARTMOOV
         </h2>
-      <p class="text-xl text-white/80 leading-relaxed mb-16 max-w-2xl mx-auto">
-        A <strong class="text-slate-900">SmartMooV</strong> é uma plataforma que liga
-        condutores a marcas. As marcas pagam para ter publicidade nos carros —
-        e tu recebes por conduzires o teu carro com um vinil publicitário.
-      </p>
+        <p class="text-xl text-white/80 leading-relaxed mb-16 max-w-2xl mx-auto">
+          A <strong class="text-slate-900">SmartMooV</strong> é uma plataforma que liga
+          marcas a condutores. A sua marca aparece em carros que circulam pela cidade
+          todos os dias — uma nova forma de publicidade exterior que chega onde os
+          outdoors não chegam.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <div class="rounded-3xl p-8 flex flex-col hover-glow reveal-on-scroll relative overflow-hidden bg-white shadow-xl border border-white/20" style="transition-delay: 100ms;">
           <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6 text-primary-600">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
-          <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 text-left">Profissionais certificados</h3>
-          <p class="text-slate-600 leading-relaxed text-left">O vinil é aplicado e removido por profissionais.</p>
+          <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 text-left">Visibilidade real</h3>
+          <p class="text-slate-600 leading-relaxed text-left">Cada carro é visto por milhares de pessoas por dia. A sua marca percorre a cidade inteira — centro, praias, bairros.</p>
         </div>
         <div class="rounded-3xl p-8 flex flex-col hover-glow reveal-on-scroll relative overflow-hidden bg-white shadow-xl border border-white/20" style="transition-delay: 200ms;">
           <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6 text-primary-600">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
           </div>
-          <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 text-left">Pagamento mensal garantido</h3>
-          <p class="text-slate-600 leading-relaxed text-left">Recebes todos os meses enquanto a campanha durar.</p>
+          <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 text-left">Custo competitivo</h3>
+          <p class="text-slate-600 leading-relaxed text-left">Até 7× mais barato por impressão do que um outdoor tradicional. Preço de lançamento exclusivo para as primeiras marcas.</p>
         </div>
         <div class="rounded-3xl p-8 flex flex-col hover-glow reveal-on-scroll relative overflow-hidden bg-white shadow-xl border border-white/20" style="transition-delay: 300ms;">
           <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6 text-primary-600">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 text-left">Tu escolhes as marcas</h3>
-          <p class="text-slate-600 leading-relaxed text-left">Tu escolhes que marcas aceitas no teu carro.</p>
+          <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 text-left">Gestão simples</h3>
+          <p class="text-slate-600 leading-relaxed text-left">Nós tratamos de tudo — produção do vinil, instalação, remoção. Sem burocracias, sem complicações.</p>
         </div>
       </div>
 
       <div class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase bg-white/20 backdrop-blur-sm border border-white/30 text-slate-900 mt-16 reveal-on-scroll">
-        Projeto-piloto na tua cidade. Os primeiros condutores a inscreverem-se terão prioridade na seleção de campanhas.
+        Piloto exclusivo na Figueira da Foz. As primeiras marcas a inscreverem-se terão prioridade na seleção de rotas.
       </div>
-
     </div>
   </section>
   
   <Features 
     sectionTitle="COMO FUNCIONA"
-    features={driverFeatures}
+    features={brandFeatures}
   />
 
-  <FAQ faqs={driverFaqs} />
+  <FAQ faqs={brandFaqs} subtitle="Tudo o que precisa de saber." />
   
   <CtaSection 
-    heading='Junta-te aos primeiros<br />condutores <span class="text-white font-extrabold">SmartMooV</span>.'
+    heading='Junte-se às primeiras<br />marcas <span class="text-white font-extrabold">SmartMooV</span>.'
+    buttonLabel="Inscreva-se"
   />
-
-  <FormSection
-    formUrl="https://airtable.com/embed/appgQVo0CQGiVnWtr/pag14O6qoPrxXeSi1/form"
-    fallbackUrl="https://airtable.com/appgQVo0CQGiVnWtr/pag14O6qoPrxXeSi1/form"
+  
+  <FormSection 
+    formUrl="https://airtable.com/embed/appgQVo0CQGiVnWtr/pagvrE6VDQS6y4pw3/form"
+    fallbackUrl="https://airtable.com/appgQVo0CQGiVnWtr/pagvrE6VDQS6y4pw3/form"
+    sectionTitle="REGISTE O SEU INTERESSE"
+    sectionDescription="Preencha o formulário abaixo e entraremos em contacto nos próximos dias."
   />
 </BaseLayout>

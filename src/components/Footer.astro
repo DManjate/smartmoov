@@ -50,7 +50,7 @@ const { showBrandLink = false, showDriverLink = false } = Astro.props;
 
       {showDriverLink && (
         <p class="text-base">
-          <a href={resolvePath('/')} class="text-primary-400 hover:text-primary-300 transition-colors font-medium">
+          <a href={resolvePath('/drivers/')} class="text-primary-400 hover:text-primary-300 transition-colors font-medium">
             Também é condutor? Conhece o SmartMooV para condutores →
           </a>
         </p>
@@ -58,7 +58,7 @@ const { showBrandLink = false, showDriverLink = false } = Astro.props;
 
       {showBrandLink && (
         <p class="text-base">
-          <a href={resolvePath('/brands/')} class="text-primary-400 hover:text-primary-300 transition-colors font-medium">
+          <a href={resolvePath('/')} class="text-primary-400 hover:text-primary-300 transition-colors font-medium">
             Também és marca? Conhece o SmartMooV para empresas →
           </a>
         </p>
