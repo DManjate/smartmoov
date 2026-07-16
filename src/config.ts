@@ -27,9 +27,14 @@ export const FOOTER_LINKS = [
     ],
   },
   {
-    title: 'Empresas',
+    title: 'Marcas',
     links: [
       { label: 'SmartMooV para Marcas', href: '/' },
+    ],
+  },
+  {
+    title: 'Condutores',
+    links: [
       { label: 'SmartMooV para Condutores', href: '/drivers/' },
     ],
   },
