@@ -5,6 +5,7 @@ export const SITE_TITLE = 'SmartMooV';
 export const SITE_DESCRIPTION = 'Movemos marcas, ligamos pessoas. Publicidade em movimento para o seu negócio.';
 export const SITE_URL = 'https://smartmoov.pt';
 export const BRAND_NAME = 'SmartMooV';
+export const CF_WEB_ANALYTICS_TOKEN = ''; // Set from Cloudflare dashboard → Web Analytics → Add site → JS snippet method
 export const BRAND_LOGO_TEXT = 'SM';
 
 export const SOCIAL_LINKS = {
