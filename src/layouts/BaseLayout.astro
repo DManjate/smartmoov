@@ -18,6 +18,8 @@ interface Props {
   author?: string;
   showBrandLink?: boolean;
   showDriverLink?: boolean;
+  ctaText?: string;
+  ctaHref?: string;
 }
 
 const {
@@ -30,6 +32,8 @@ const {
   author,
   showBrandLink = false,
   showDriverLink = false,
+  ctaText = 'QUERO SABER MAIS',
+  ctaHref = '#como-funciona',
 } = Astro.props;
 
 const siteURL = SITE_URL.endsWith('/') ? SITE_URL : `${SITE_URL}/`;
@@ -125,7 +129,7 @@ const structuredData =
     <ClientRouter />
   </head>
   <body class="flex flex-col min-h-screen" style="background-color: var(--bg-color); color: var(--text-color);">
-    <Navbar />
+    <Navbar ctaText={ctaText} ctaHref={ctaHref} />
     <main class="flex-grow">
       <slot />
     </main>
