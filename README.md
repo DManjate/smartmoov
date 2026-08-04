@@ -46,7 +46,7 @@ Key configuration:
 
 Push to `master` triggers GitHub Pages deploy via `.github/workflows/deploy.yml`. PR previews are auto-deployed via `preview.yml`.
 
-Custom domain: `smartmoov.pt` (DNS via Dynadot)
+Custom domain: `smartmoov.pt` (DNS via PTisp)
 
 ## Docs
 
