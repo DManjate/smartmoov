@@ -4,7 +4,7 @@
 
 SmartMooV is a vehicle-wrap advertising marketplace for Portugal — connecting local businesses with high-mileage drivers who display vinyl advertising on their personal vehicles.
 
-Phase 1 is a validation experiment in Figueira da Foz: two landing pages that capture driver and brand interest via Airtable forms.
+Phase 1 is a validation experiment in Figueira da Foz: two landing pages that capture brand and driver interest via Airtable forms.
 
 **Live:** [smartmoov.pt](https://smartmoov.pt)
 
@@ -12,8 +12,9 @@ Phase 1 is a validation experiment in Figueira da Foz: two landing pages that ca
 
 ## Project
 
-- **Drivers LP:** Hero → Como Funciona → FAQ → CTA → Airtable form
-- **Brands LP:** Hero → Como Funciona → CTA → Airtable form
+- **Brands LP:** `/` — Hero → Como Funciona → FAQ → CTA → Airtable form
+- **Drivers LP:** `/drivers/` — Hero → Como Funciona → FAQ → CTA → Airtable form
+- **Redirect:** `/brands/` → `/` (legacy route)
 - **Content:** Portuguese (pt-PT), `tu` register for drivers, `você` for brands
 
 ## Stack
@@ -37,14 +38,15 @@ npm run build    # Build to dist/
 ```
 
 Key configuration:
-- `src/config.ts` — site metadata, navigation, footer links
+- `src/config.ts` — site metadata, navigation, footer links, Cloudflare Web Analytics token
 - `src/styles/global.css` — Tailwind `@theme` block (SmartMooV palette)
-- `src/pages/index.astro` — Drivers landing page
-- `src/pages/brands.astro` — Brands landing page
+- `src/pages/index.astro` — Brands landing page
+- `src/pages/drivers.astro` — Drivers landing page
+- `src/pages/brands.astro` — redirect to `/`
 
 ## Deploy
 
-Push to `master` triggers GitHub Pages deploy via `.github/workflows/deploy.yml`. PR previews are auto-deployed via `preview.yml`.
+Push to `master` triggers GitHub Pages deploy via `.github/workflows/deploy.yml`.
 
 Custom domain: `smartmoov.pt` (DNS via PTisp)
 
