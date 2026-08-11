@@ -116,16 +116,6 @@ const structuredData =
     
     <title>{fullTitle}</title>
 
-    {
-      CF_WEB_ANALYTICS_TOKEN && (
-        <script
-          defer
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon={JSON.stringify({ token: CF_WEB_ANALYTICS_TOKEN })}
-        ></script>
-      )
-    }
-
     <ClientRouter />
   </head>
   <body class="flex flex-col min-h-screen" style="background-color: var(--bg-color); color: var(--text-color);">
@@ -157,5 +147,15 @@ const structuredData =
         });
       });
     </script>
+
+    {
+      CF_WEB_ANALYTICS_TOKEN && (
+        <script
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={JSON.stringify({ token: CF_WEB_ANALYTICS_TOKEN })}
+        ></script>
+      )
+    }
   </body>
 </html>
