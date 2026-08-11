@@ -9,7 +9,7 @@ export const CF_WEB_ANALYTICS_TOKEN = 'fd64034b034242d88f6caf53a1ba1df9'; // Clo
 export const BRAND_LOGO_TEXT = 'SM';
 
 export const SOCIAL_LINKS = {
-  instagram: 'https://instagram.com/smartmoov',
+  facebook: 'https://www.facebook.com/people/smartmoov/61593181980527/',
 };
 
 export const NAV_LINKS = [
