@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import Badge from '../components/Badge.astro';
+import { resolvePath } from '../utils/navigation';
+---
+
+<BaseLayout
+  title="Página não encontrada"
+  description="A página que procura não existe ou foi movida."
+  noindex
+>
+  <section class="relative overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <div class="flex flex-col items-center text-center gap-8 py-24 lg:py-32 reveal-on-scroll">
+        <Badge variant="primary" class="px-4 py-1.5 text-sm">
+          Erro 404
+        </Badge>
+
+        <div class="flex flex-col items-center gap-4">
+          <h1 class="text-7xl md:text-8xl lg:text-9xl font-heading font-extrabold tracking-tight text-gradient leading-none">
+            404
+          </h1>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 dark:text-white">
+            Perdemo-nos no caminho.
+          </h2>
+        </div>
+
+        <p class="text-lg xl:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+          A página que procura não existe, foi movida ou o endereço está incorreto.
+          Volte à página inicial ou conheça a oferta para condutores.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+          <Button href={resolvePath('/')} variant="primary" size="lg" class="shadow-xl shadow-primary-500/20">
+            Voltar ao início
+          </Button>
+          <Button href={resolvePath('/drivers/')} variant="outline" size="lg">
+            Oferta para condutores
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

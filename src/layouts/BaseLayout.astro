@@ -20,6 +20,7 @@ interface Props {
   showDriverLink?: boolean;
   ctaText?: string;
   ctaHref?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -34,6 +35,7 @@ const {
   showDriverLink = false,
   ctaText = 'QUERO SABER MAIS',
   ctaHref = '#como-funciona',
+  noindex = false,
 } = Astro.props;
 
 const siteURL = SITE_URL.endsWith('/') ? SITE_URL : `${SITE_URL}/`;
@@ -41,7 +43,7 @@ const canonicalPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `$
 const canonicalURL = new URL(canonicalPath, siteURL).href;
 const imageURL = new URL(image, siteURL).href;
 const fullTitle = `${title} | ${SITE_TITLE}`;
-const robotsContent = 'index, follow';
+const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow';
 const structuredData =
   type === 'article'
     ? {

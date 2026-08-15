@@ -15,6 +15,8 @@ Phase 1 is a validation experiment in Figueira da Foz: two landing pages that ca
 - **Brands LP:** `/` — Hero → Como Funciona → FAQ → CTA → Airtable form
 - **Drivers LP:** `/drivers/` — Hero → Como Funciona → FAQ → CTA → Airtable form
 - **Redirect:** `/brands/` → `/` (legacy route)
+- **Redirect:** `/webmail/` → PTisp webmail (domain points to GitHub Pages, so `/webmail` cannot be served by PTisp directly)
+- **404:** `404.html` — branded page served by GitHub Pages for unknown paths
 - **Content:** Portuguese (pt-PT), `tu` register for drivers, `você` for brands
 
 ## Stack
